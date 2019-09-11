@@ -1,0 +1,4 @@
+GUI - Graphical User Interface
+LAMP - Linux Apache MySQL PHP
+MEAN - MongoDB Express Angularjs Node
+STACK - All the technology and programming languages that make up a solution
