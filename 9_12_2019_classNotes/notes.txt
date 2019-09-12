@@ -1,11 +1,7 @@
 terminal commands:
 
 mv: rename a file by 
-	mv file1 file2
-
-mv: move files by
-	mv * folderA folderB
-	this will also remove folderA 
+	mv file1 file2 
 
 
 cp: copy files and retain old version
