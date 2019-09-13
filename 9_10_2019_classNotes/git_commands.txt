@@ -5,3 +5,12 @@ git add -A #Adds all the files to be saved
 git commit -m "Description of changes" #Describes how the files were changed
 
 git push origin master #Saves the files to git
+
+git checkout -b branchName #creates new branch
+
+git branch #lists all branches and shows what branch you are on
+
+git checkout branchName #switches to that branch
+
+git pull origin branchName  #pulls changes that are in git but not stored locally
+
