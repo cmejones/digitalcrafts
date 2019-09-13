@@ -8,3 +8,38 @@ cp: copy files and retain old version
 	cp fileA.txt fileB.txt
 
 
+git checkout -b branchName
+	creates a copy of your code in a new branch
+
+git push origin branchName
+	pushes new branch to git!
+
+git checkout branchName
+	switches to different branch
+
+git pull
+	if code is ahead in git, this pulls the code locally
+
+DRY KISS #Don't repeat yourself, Keep it simple Stupid
+
+Variable types:
+  Integer 
+	whole numbers - take up least amount of RAM space
+
+  Double
+	numbers with 1 decimal (31,000.08)
+
+  Float
+	takes up the most RAM space
+
+  String
+	"hello text"
+
+  Char
+	single character = "c"
+
+  boolean
+	true or false (1 or 0)
+
+  
+Array
