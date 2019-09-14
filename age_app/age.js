@@ -18,7 +18,7 @@ var canDrink = function(age) {
 
 //renting function
 var canRent = function(age) {
-  if (age >= 25) {
+  if (age > 25) {
     return true; 
   } else {
   return false;
@@ -26,7 +26,7 @@ var canRent = function(age) {
 
 //child age function
 var isChild = function(age) {
-  if (age >= 9) {
+  if (age <= 10) {
   return true;
  } else {
   return false;
@@ -34,24 +34,44 @@ var isChild = function(age) {
 
 
 //Outputs
+var agesArray = [];
+var testAges = function(name, age) {
+  var message = ""; 
 
-if (canRent(32)) {  
- console.log("Sarah can rent a car");
-} else {
-  console.log("You are too young.");
+  if (canDrive(age)) {  
+   message = name + " can drive.";
+  } else {
+    message = name + "can't drive.";
+  }
+  agesArray.push(message);
+
+  if (canRent(age)) {
+    message = name + " can rent a car.";
+  } else {
+    message = name + " can't rent a car.";
+  }
+  agesArray.push(message);
+
+  if (canDrink(age)) {
+    message = name + " can drink.";
+  } else {
+    message = name + " can't drink.";
+  }
+  agesArray.push(message);
+
+  if (isChild(age)) {
+    message = name + " can play at McDonald's.";
+  } else {
+    message = name + " can't play at McDonald's.";
+  }
+  agesArray.push(message);
 }
 
-if (canDrive(19)) {
-  console.log("Bob can drive");
-}
+//Test Results
+testAges("Sarah", 32);
+testAges("Bob", 19);
+testAges("Henry", 22);
+testAges("Katie", 9);
 
-if (canDrink(22)) {
-  console.log("Henry can drink");
-}
- if (isChild(age)) {
-  console.log(name + " can't play at McDonald's");
-}
-
-//Array
-var resultsArray = [];
+console.log(agesArray);
 
