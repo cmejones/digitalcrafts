@@ -22,8 +22,8 @@ if(x==y) {
   console.log("X is NOT equal to Y, you dumbass");
 }
 
-var marvel = "four";
-var DC = "eight";
+var marvel = "Marvel";
+var DC = "DC";
 
 if (marvel != DC) {
   console.log("Marvel does not equal DC"); 
@@ -36,3 +36,8 @@ if (marvel != DC) {
 } else {
   console.log("Marvel is less than DC");
 }
+
+console.log("showing lengths");
+console.log(marvel.length);
+console.log(DC.length);
+
