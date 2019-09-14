@@ -30,7 +30,7 @@ Variable types:
 	numbers with 1 decimal (31,000.08)
 
   Float
-	takes up the most RAM space
+	more precise double; takes up the most RAM space
 
   String
 	"hello text"
@@ -41,5 +41,14 @@ Variable types:
   boolean
 	true or false (1 or 0)
 
+function: piece of reusable code
+	var function1 = function() {
+	//code
+	}
+
+parameters: values you can pass into a function
   
 Array
+
+
+ls -la #show hidden files in linux
