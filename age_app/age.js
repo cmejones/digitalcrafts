@@ -41,28 +41,28 @@ var testAges = function(name, age) {
   if (canDrive(age)) {  
    message = name + " can drive.";
   } else {
-    message = name + "can't drive.";
+    message = name + " can\'t drive.";
   }
   agesArray.push(message);
 
-  if (canRent(age)) {
+ if (canRent(age)) {
     message = name + " can rent a car.";
   } else {
-    message = name + " can't rent a car.";
+    message = name + " can\'t rent a car.";
   }
   agesArray.push(message);
 
   if (canDrink(age)) {
     message = name + " can drink.";
   } else {
-    message = name + " can't drink.";
+    message = name + " can\'t drink.";
   }
   agesArray.push(message);
 
   if (isChild(age)) {
-    message = name + " can play at McDonald's.";
+    message = name + " can play at McDonald\'s.";
   } else {
-    message = name + " can't play at McDonald's.";
+    message = name + " can\'t play at McDonald\'s.";
   }
   agesArray.push(message);
 }
@@ -72,6 +72,7 @@ testAges("Sarah", 32);
 testAges("Bob", 19);
 testAges("Henry", 22);
 testAges("Katie", 9);
+
 
 console.log(agesArray);
 
