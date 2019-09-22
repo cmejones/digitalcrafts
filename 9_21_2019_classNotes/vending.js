@@ -84,8 +84,6 @@ var moneyInput = function(item) {
 console.log(moneyInput(dollar));
 console.log(moneyInput(dollar));
 
-
-
 //vending function
 //need to return change
 //don't return selection if not equal to item

@@ -25,4 +25,4 @@ var coolCities = function (items) {
 
 var results = coolCities(cities);
 
- console.log(results);
+console.log(results);
