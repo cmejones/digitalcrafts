@@ -1,0 +1,39 @@
+body{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    z-index:10000;
+    background:#fff;
+    top:0px;
+    border-bottom:3px solid maroon;
+    padding:20px;
+  }
+
+h1, h2, h3, h4, h5 {
+    margin:15px 10px 15px;
+    font-family:'Playfair Display', serif;
+  }
+  
+p {
+    margin:15px;
+  }
+
+ul {
+    -webkit-columns: 3 150px;
+    -moz-columns: 3 150px;
+         columns: 3 150px;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+         column-gap: 1em;
+}
+
+#profile {
+  border-top-right-radius:50%;
+  border-bottom-left-radius: 50%;
+  left: 5em;
+  position: relative;
+}

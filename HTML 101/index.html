@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="styles/styles.css" rel="stylesheet">
         <title>Christina Jones</title>
     </head>
     <body>
-        <h1 align="center">Christina Jones</h1>
-        <h3 align="center">Marietta, GA</h3>
-        <div align="center"><a href="https://www.linkedin.com/in/christinaevansjones/" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAYFBMVEUCdLP///8AbrCKr9GWtNMAcrKeutjc5/EAZ63J2+pMir7I2OgAa68AcLEAaa7j7PS80OOvyN8AYatjmMWlvtqAqs4xgLnp8ffz9/ogd7Rck8JwocrR3+yowts/g7ozfbhmmv3GAAADO0lEQVRoge3b2ZbiIBAGYEJE0hGyGDWr+v5v2VmmW039UacPkD4z1IU3cvwkJlAUwoIxymy7cRjbrJxcNrykjVbcaSjdpF98zrlgjkNwnk98HjnHxy8Q5QMv1Sp67yvZ87FeR2dMxwGTfC2dMS5ZrtbjVc42a/Z+w8I1+dDznvf8YwjNbc+Ey7xWojmG7YnbvDhLvNi33ZSOVGdtb1Re4PlJBrcIE1s/AeZ5Uwb3YW1Wgry4VMFjnBOH/F4G8yjs3ICI50eiB6Wdyw/5lPJBa6X7gBcnoAc7K90HPLr2/UKktvHwAV5tEV9dLeiQzyF/+T96z1vES+ao96xGfObqzmeqA3xsZdZBvG6o3tkZ9OGYH2WEv9hZhuIZj82H3dDljMd0/TjnhZEdfSnbEcndwy9jS31/kuvx+iyHpKPcFRaLH08SbSVOcXyp1RqZ7hBCCG256vOLVzme/1GIYXZ8664xzg+1YS3qelifKvVqqMZ8ROK+TTJ/83sNJlTUnD/+rJCqdHcooujpN0C8YN3HLLrjrZHI5+/mUxoqopjmabv22cABeUEn3O2tkSZroHLk+ZVOlEOk7fIK1Qg/JuHqOF8YfkdWL/0CxvgI5sdfl+e08AMY4tkeJWi3qE64/4b4ZPdU732bPN+80PsnAGYsRngJclMSsEJg5sFDK/J5pGjyNsK/F0fQfYe8BOskhzzasnLJb2j3XfLpflW+qu3y8lDE10scLg2BBXn0DPJdoZI+0enTnOiCZwCa2Jjjz8ldE7BGDlBp1hifP4zpIkL9/yDjvim+mt3VIgaN6K1viicjqkL3ny2+IiMKrI3auvgZnc1RfYxsTBniWzCcl7QZqQub4StQduPg3r/a4UtQcVXg0Sd1YTN8CjIJdXbGS5BHqgP9FDLjm+E7wHNQGLfEoyza8573vOc973nPe97znve85z3v+d/IH57ytF7Yf/JP1/fj3yZm8eJduEtK271VUv57Hu/RvtHsX/z3guc97/mX/HZNfsvs/AX2vVAZgxvrbkLolAXNalefNwELUvenYKcQPB0OwoKNICcx7HUOx4AzvcYxYD1st0yHoAvHh6CV4sW41cWmPGitI+CfP7hCylktXHoAAAAASUVORK5CYII=" width="30" height="30"></a>
-            <a href="https://www.github.com/cmejones" target="_blank"><img src="data:image/png;base64,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" width="30" height="30"/></a></div>
-        <p align="right"><img src="https://media.licdn.com/dms/image/C4E03AQGSZbM6elfN1w/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=TrIQ8C6qyoqhFJ-ddke2_4DZmccSzgAIldIwszq0fzA" align="right" padding="25px" />
-            
-        </p>
-        <h2>Summary</h2>
-        <p>This is my working summary!</p>
-            <ol>
-                <li>Went to college</li>
-                <li>Became a receptionist</li>
-                <li>Started work as an editor</li>
-                <li>Got laid off and started working in IT only because I knew MS Access</li>
-                <li>Managed company intranet</li>
-                <li>Left to work at a start-up</li>
-                <li>Company ran out of money</li>
-                <li>Got a new job and have been there 10.5 years!</li>
-
-            </ol>
-
-        <div><strong>Projects</strong></div>
-        <ul>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example1.html" target="_blank">Exercise 1</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example2.html" target="_blank">Exercise 2</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example3.html" target="_blank">Exercise 3</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example4.html" target="_blank">Exercise 4</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example5.html" target="_blank">Exercise 5</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example6.html" target="_blank">Exercise 6</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example7.html" target="_blank">Exercise 7</a></li>
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example8.html" target="_blank">Exercise 8</a></li>       
-            <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example9.html" target="_blank">Exercise 9</a></li>            
-        </ul>
+        <header>
+            <h1 align="center">Christina Jones</h1>
+            <h2 align="center">Your Next Best Employee!</h2>
+            <div align="center"><a href="https://www.linkedin.com/in/christinaevansjones/" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAYFBMVEUCdLP///8AbrCKr9GWtNMAcrKeutjc5/EAZ63J2+pMir7I2OgAa68AcLEAaa7j7PS80OOvyN8AYatjmMWlvtqAqs4xgLnp8ffz9/ogd7Rck8JwocrR3+yowts/g7ozfbhmmv3GAAADO0lEQVRoge3b2ZbiIBAGYEJE0hGyGDWr+v5v2VmmW039UacPkD4z1IU3cvwkJlAUwoIxymy7cRjbrJxcNrykjVbcaSjdpF98zrlgjkNwnk98HjnHxy8Q5QMv1Sp67yvZ87FeR2dMxwGTfC2dMS5ZrtbjVc42a/Z+w8I1+dDznvf8YwjNbc+Ey7xWojmG7YnbvDhLvNi33ZSOVGdtb1Re4PlJBrcIE1s/AeZ5Uwb3YW1Wgry4VMFjnBOH/F4G8yjs3ICI50eiB6Wdyw/5lPJBa6X7gBcnoAc7K90HPLr2/UKktvHwAV5tEV9dLeiQzyF/+T96z1vES+ao96xGfObqzmeqA3xsZdZBvG6o3tkZ9OGYH2WEv9hZhuIZj82H3dDljMd0/TjnhZEdfSnbEcndwy9jS31/kuvx+iyHpKPcFRaLH08SbSVOcXyp1RqZ7hBCCG256vOLVzme/1GIYXZ8664xzg+1YS3qelifKvVqqMZ8ROK+TTJ/83sNJlTUnD/+rJCqdHcooujpN0C8YN3HLLrjrZHI5+/mUxoqopjmabv22cABeUEn3O2tkSZroHLk+ZVOlEOk7fIK1Qg/JuHqOF8YfkdWL/0CxvgI5sdfl+e08AMY4tkeJWi3qE64/4b4ZPdU732bPN+80PsnAGYsRngJclMSsEJg5sFDK/J5pGjyNsK/F0fQfYe8BOskhzzasnLJb2j3XfLpflW+qu3y8lDE10scLg2BBXn0DPJdoZI+0enTnOiCZwCa2Jjjz8ldE7BGDlBp1hifP4zpIkL9/yDjvim+mt3VIgaN6K1viicjqkL3ny2+IiMKrI3auvgZnc1RfYxsTBniWzCcl7QZqQub4StQduPg3r/a4UtQcVXg0Sd1YTN8CjIJdXbGS5BHqgP9FDLjm+E7wHNQGLfEoyza8573vOc973nPe97znve85z3v+d/IH57ytF7Yf/JP1/fj3yZm8eJduEtK271VUv57Hu/RvtHsX/z3guc97/mX/HZNfsvs/AX2vVAZgxvrbkLolAXNalefNwELUvenYKcQPB0OwoKNICcx7HUOx4AzvcYxYD1st0yHoAvHh6CV4sW41cWmPGitI+CfP7hCylktXHoAAAAASUVORK5CYII=" width="30" height="30"></a>
+                <a href="https://www.github.com/cmejones" target="_blank"><img src="data:image/png;base64,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" width="30" height="30"/></a>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <h3>Summary</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 col-md-6" id="resume">
+                    <p>This is my working summary! I will only include jobs obtained after I graduated from college. However, 
+                        if you must know, my waitressing skills are phenomenal!
+                    </p>
+                    <ol>
+                        <li>Became a receptionist</li>
+                        <li>Started work as an editor at an internet Start-up</li>
+                        <li>Got laid off (start-up went belly-up) and began work as IT Admin Assistant only because 
+                            I knew MS Access</li>
+                        <li>Managed company intranet, among other things</li>
+                        <li>Took a leap of faith and followed a former boss to his new start-up</li>
+                        <li>Second start-up went belly-up (sensing a trend...)</li>
+                        <li>Got a new job and have been there 10.5 years!</li>
+                    </ol>
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-6"><img id="profile"  alt="Christina Jones" src="https://media.licdn.com/dms/image/C4E03AQGSZbM6elfN1w/profile-displayphoto-shrink_200_200/0?e=1574899200&v=beta&t=TrIQ8C6qyoqhFJ-ddke2_4DZmccSzgAIldIwszq0fzA" align="left" />
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-6">
+                <h3>Projects</h3>
+                    <ul>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example1.html" target="_blank">Exercise 1</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example2.html" target="_blank">Exercise 2</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example3.html" target="_blank">Exercise 3</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example4.html" target="_blank">Exercise 4</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example5.html" target="_blank">Exercise 5</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example6.html" target="_blank">Exercise 6</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example7.html" target="_blank">Exercise 7</a></li>
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example8.html" target="_blank">Exercise 8</a></li>       
+                        <li><a href="https://github.com/cmejones/digitalcrafts/blob/master/HTML%20101/example9.html" target="_blank">Exercise 9</a></li>            
+                    </ul>
+                </div>
+            </div>    
+        </div>                
     </body>
 </html>
