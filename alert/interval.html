@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Alert Interval Exercise</title>
+</head>
+<html>
+    <header>
+        <script>
+        window.onload = function load_js_first() {
+                var locations = ["Asheville", "Barcelona", "Paris", "Boston", "Las Vegas"];
+                function timedList() {
+                    var index = 0;
+                    function nextItem() {
+                        var vacationListNode = document.createElement("LI");  // Create a <li> node
+                        var vacationLocationsNode = document.createTextNode(locations[index]); // Create a text node
+                        vacationListNode.appendChild(vacationLocationsNode);  // Append the text to <li>
+                        document.getElementById("v").appendChild(vacationListNode);  //append items to DOM
+                        index++;  //loop through all items in arry
+                        if (index < locations.length) {
+                            setTimeout(nextItem, 5000);  //use setTimeout to stop running loop when complete
+                        }
+                    };
+                    nextItem();
+
+                   // function myStop() {
+                   //     clearTimeout(vacationListNode);
+                   // }  
+                };
+                timedList();
+            } 
+            
+        </script>
+    </header>
+    <body>
+        <h1>Best Vacation Spots</h1>
+        <div>
+            <ol id="v">
+
+            </ol>
+           <!-- <button onclick="myStop()">Stop the alert</button> -->
+        </div>
+    </body>
+</html>
