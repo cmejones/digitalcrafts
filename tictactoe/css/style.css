@@ -1,0 +1,9 @@
+.board-piece {
+    height: 100px;
+    text-align:center;
+}
+
+.player {
+   margin:auto;
+   text-align:center;
+}
