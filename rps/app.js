@@ -37,19 +37,6 @@ var computerArray = [
 var scoreComputer = 1;
 var scorePlayer = 1;
 
-//set timer
-var i = 1;
-var intervalId = setInterval(function(){
-    if(i === 4){
-        clearInterval(intervalId);
-    }
-//////////////////////
-//can I make this a modal? And only start when game is in play; also stop if selection is made
-    document.getElementById("timer").innerHTML = i;
-    i++;
-}, 2000);
-
-
 //create game options
     for(var row = 0; row < 1; row++) {
         var rowElement = document.createElement("div");
@@ -64,14 +51,14 @@ var intervalId = setInterval(function(){
             //onclick function to play game         
             columnElement.onclick = function() {
                 var randomItem = computerArray[Math.floor(Math.random()*computerArray.length)];
-                document.getElementById("computer-selection").innerHTML = "Computer chooses: " + randomItem;
+                document.getElementById("computer-selection").innerHTML = "Computer chose: " + randomItem;
                 if(this.innerHTML == rock() && randomItem == "Rock") {
-                    alert("Tie!");
+                    document.getElementById("player-selection").innerHTML = "You chose: Rock";
                 } else if (this.innerHTML == rock() && randomItem == "Paper") {
-                    alert("You lose!")
+                    document.getElementById("player-selection").innerHTML = "You chose: Rock so you lose!!!";
                     document.getElementById("computer-score").innerHTML = scoreComputer++;
                 } else if (this.innerHTML == rock() && randomItem == "Scissors") {
-                    alert("you win this round!");
+                    document.getElementById("player-selection").innerHTML = "You chose: Rock so you WIN!!!";
                     document.getElementById("player-score").innerHTML = scorePlayer++;
                 }
             }
@@ -141,3 +128,25 @@ var scissors = function() {
 }
 
 makeGame();
+
+//set timer
+var makeTimer = function() {
+var i = 1;
+var intervalId = setInterval(function(){
+    if (i === 4) {
+        clearInterval(intervalId);
+    } 
+//can I make this a modal? And only start when game is in play; also stop if selection is made
+    document.getElementById("timer").innerHTML = i;
+    i++;
+    }, 1000);
+    document.getElementById("rock").addEventListener("click", stopTimer);
+    document.getElementById("paper").addEventListener("click", stopTimer);
+    document.getElementById("scissors").addEventListener("click", stopTimer);
+    function stopTimer() {
+        clearInterval(intervalId);
+    }
+
+}
+
+
