@@ -27,6 +27,7 @@ var gameData = []; //set up empty array in order to store points
 var makeGame = function() {
 
 //computer selects randomly
+/////////////make this an object to be reusable throughout for both player and computer
 var computerArray = [
     "Rock",
     "Paper",
@@ -39,9 +40,11 @@ var scorePlayer = 1;
 
 //create game options
     for(var row = 0; row < 1; row++) {
+
         var rowElement = document.createElement("div");
         rowElement.className = "row";
         gameData[row] = [];
+
         for (var column = 0; column <1; column++) {
             var columnElement = document.createElement("div");
             columnElement.className = "col border text-center";
@@ -50,13 +53,17 @@ var scorePlayer = 1;
 
             //onclick function to play game         
             columnElement.onclick = function() {
+
                 var randomItem = computerArray[Math.floor(Math.random()*computerArray.length)];
                 document.getElementById("computer-selection").innerHTML = "Computer chose: " + randomItem;
+
                 if(this.innerHTML == rock() && randomItem == "Rock") {
                     document.getElementById("player-selection").innerHTML = "You chose: Rock";
+
                 } else if (this.innerHTML == rock() && randomItem == "Paper") {
                     document.getElementById("player-selection").innerHTML = "You chose: Rock so you lose!!!";
                     document.getElementById("computer-score").innerHTML = scoreComputer++;
+
                 } else if (this.innerHTML == rock() && randomItem == "Scissors") {
                     document.getElementById("player-selection").innerHTML = "You chose: Rock so you WIN!!!";
                     document.getElementById("player-score").innerHTML = scorePlayer++;
@@ -72,8 +79,10 @@ var scorePlayer = 1;
             columnElement.id = "paper";
 
             columnElement.onclick = function() {
+
                 var randomItem = computerArray[Math.floor(Math.random()*computerArray.length)];
                 document.getElementById("computer-selection").innerHTML = "Computer chooses: " + randomItem;
+
                 if(this.innerHTML == paper() && randomItem == "Paper") {
                     alert("Tie!");
                 } else if (this.innerHTML == paper() && randomItem == "Scissors") {
@@ -94,8 +103,10 @@ var scorePlayer = 1;
             columnElement.id = "scissors";
 
             columnElement.onclick = function() {
+
                 var randomItem = computerArray[Math.floor(Math.random()*computerArray.length)];
                 document.getElementById("computer-selection").innerHTML = "Computer chooses: " + randomItem;
+
                 if(this.innerHTML == scissors() && randomItem == "Scissors") {
                     alert("Tie!");
                 } else if (this.innerHTML == scissors() && randomItem == "Rock") {
@@ -131,18 +142,21 @@ makeGame();
 
 //set timer
 var makeTimer = function() {
-var i = 1;
-var intervalId = setInterval(function(){
-    if (i === 4) {
-        clearInterval(intervalId);
-    } 
+
+    var i = 1;
+    var intervalId = setInterval(function(){
+        if (i === 4) {
+            clearInterval(intervalId);
+        } 
 //can I make this a modal? And only start when game is in play; also stop if selection is made
     document.getElementById("timer").innerHTML = i;
     i++;
     }, 1000);
+
     document.getElementById("rock").addEventListener("click", stopTimer);
     document.getElementById("paper").addEventListener("click", stopTimer);
     document.getElementById("scissors").addEventListener("click", stopTimer);
+    
     function stopTimer() {
         clearInterval(intervalId);
     }
@@ -150,3 +164,4 @@ var intervalId = setInterval(function(){
 }
 
 
+///change so it's split screen, player selects on left and both results are shown at same time via images
