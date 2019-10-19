@@ -1,0 +1,29 @@
+html {
+    margin:0;
+    padding: 0;
+}
+.portfolio {
+    justify-content: center;
+}
+
+hr {
+    height: 15px;
+    background-color:#666;
+    border-radius: 5px;
+}
+
+footer {
+    margin-top:1rem;
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+footer .container-fluid {
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+
+.card  {
+    padding-left:0;
+    padding-right:0;
+}
