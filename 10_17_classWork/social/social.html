@@ -1,0 +1,132 @@
+<!--
+*Social Feed Project*
+
+*Overview:* You are startup that has decided Facebook and Twitter is for old people. 
+So you are going to make your own social feed application. You application should perform the following:
+
+- A user is able to enter data into an input area. Think like Twitter or Facebook.
+        Input
+        --text area, url field
+        --button with onclick to submit data
+
+
+- At the very least, their should be a text area, and a input where the user is able to enter the url of image from online
+- Bonus: Give the user the ability to select the text color
+- When the user submits their data, it should go into a feed that exist on the page
+- The username, time the user submitted the post, and the content should appear on the page
+- If the post has an image, it should appear also
+- Remember, a post can have text, image, or both
+- Figure out how to prevent users from entering bad data (ie, no text or not an image)
+- As the username adds more post, it should also be added to the feed
+- The user should have the ability to delete a post
+- BONUS: Give the ability for the user to update the post in the feed.
+
+data storage
+--array
+--object
+--array of objects
+-->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fbe1287b4e.js"></script> 
+    <!-- <link href="styles/style.css" rel="stylesheet"> --> 
+    <title>Stay Positive</title>
+</head>
+<html>
+    <body class="container-fluid">
+        <div class="text-center col" id="social">
+            <h1>Be Social, Stay Positive</h1>
+            <div class="">
+                <label for="imageCreate">Share an image of what makes you smile:<br />
+                <input id="imageURL" type="text" placeholder=" enter the url here"></label>
+            </div> 
+            <div class="userText">
+                <label for="userText">Why does this make you smile?<br />
+                <textarea id="userText"></textarea>
+            </div>
+            <div class="userText">
+                <label for="userName">What's your name?<br />
+                <input type="text"id="userName"></input>
+            </div>
+            <div class="">
+                <button class="btn btn-success" id="submit" onclick="submitSmiles()">Submit</button>
+            </div>
+        </div>
+        <hr />
+        <div class="text-center col" id="socialFeed">
+            <h1>Scroll for more smiles!</h1>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var dataStorage = [];
+
+        var submitSmiles = function() {
+            var postContainer = document.createElement("div");
+            var imageCreate = document.getElementById("imageURL");
+            var userText = document.getElementById("userText");
+            var userName = document.getElementById("userName");
+            var outputImage = document.getElementById("socialFeed");
+            var outputName = document.getElementById("socialFeed");
+            var outputText = document.getElementById("socialFeed");
+
+            var d = new Date();
+            var month = new Array();
+                month[0] = "January";
+                month[1] = "February";
+                month[2] = "March";
+                month[3] = "April";
+                month[4] = "May";
+                month[5] = "June";
+                month[6] = "July";
+                month[7] = "August";
+                month[8] = "September";
+                month[9] = "October";
+                month[10] = "November";
+                month[11] = "December";
+            var n = month[d.getMonth()];
+
+            var imageContent = imageCreate.value;
+            var textContent = userText.value;
+            var userNameContent = userName.value;
+           // console.log(textOutput);
+
+            if(imageContent) {
+                //store the data
+                dataStorage.push({img : imageContent, name : userNameContent, reason: textContent, date_submitted : Date()});
+
+                //postContainer.className = "col border";
+               // postContainer.innerHTML = dataStorage;
+                console.log(dataStorage);
+
+                var imageOutput = document.createElement("img");
+                imageOutput.src = imageContent;
+                
+                var dateSubmitted = new Date();
+                //console.log(dateSubmitted);
+
+                var nameOutput = document.createElement("p");
+                nameOutput.innerHTML = userNameContent;
+
+                var textOutput = document.createElement("p");
+                textOutput.innerHTML = textContent;
+
+                //postContainer.append(dataStorage);
+                
+                outputImage.append(imageOutput);
+                outputText.append(textOutput);
+                outputName.append(nameOutput, n," ",dateSubmitted.getDate(),", ",dateSubmitted.getFullYear());
+                //reset image input 
+                imageCreate.value = "";
+                userText.value = "";
+                userName.value = "";
+
+            } else {
+                alert("no image!");
+            }
+        }
+    </script>
+</html>
