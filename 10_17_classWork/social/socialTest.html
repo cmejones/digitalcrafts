@@ -32,8 +32,8 @@ data storage
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
-    <!--<script src="https://use.fontawesome.com/fbe1287b4e.js"></script>  -->
-    <link href="style.css" rel="stylesheet">  
+    <script src="https://use.fontawesome.com/fbe1287b4e.js"></script> 
+    <!-- <link href="styles/style.css" rel="stylesheet"> --> 
     <title>Stay Positive</title>
 </head>
 <html>
@@ -52,41 +52,40 @@ data storage
                 <label for="userName">What's your name?<br />
                 <input type="text"id="userName"></input>
             </div>
+            <div class="">
                 <button class="btn btn-success" id="submit" onclick="submitSmiles()">Submit</button>
+            </div>
         </div>
         <hr />
         <h1 class="text-center">Scroll for more smiles!</h1>
+        <div class="row">
+            <div class="col">
 
-        <div class="col">
-            <div id="socialFeed" class="flex-container">
-                <div id="imageOutput" class="text-center col-12 flex-container"></div>
-                <!--<div id="textOutput" class="col-6">
-                    <p id="nameOutput"></p>
-                </div> -->
+                <div id="socialFeed" class="row">
+                    <div id="imageOutput" class="col-6 border"></div>
+                    <div id="textOutput" class="col-6"></div>
+                </div>
+            
             </div>
         </div>
-
     </body>
-
     <script type="text/javascript">
         var socialFeed = document.getElementById("socialFeed");
+        var displaySmiles = document.createElement("div");
         var dataStorage = [];
-        
-      //  dataStorage.forEach(submitSmiles);
+        //dataStorage.forEach(submitSmiles);
 
-        function submitSmiles() {
-           /** 
-            var container = document.createElement("div");
-            container.innerHTML = "this is my container"
-            container.className = "container-fluid row";
-            document.getElementById("socialFeed").appendChild(container);
-            */
-            //container.id = [i];
+        function submitSmiles (item, index) {
 
             //gather the inputs
             var imageCreate = document.getElementById("imageURL");
             var userText = document.getElementById("userText");
             var userName = document.getElementById("userName");
+
+            //create the outputs to store and display
+            var outputImage = document.getElementById("imageOutput");
+            var outputName = document.getElementById("textOutput");
+            var outputText = document.getElementById("textOutput");
 
             //convert number month to text
             var d = new Date();
@@ -103,59 +102,78 @@ data storage
                 month[9] = "October";
                 month[10] = "November";
                 month[11] = "December";
-            var m = month[d.getMonth()];
+            var n = month[d.getMonth()];
 
-            //create variables to pull the value of the input fields
+            //create variables to store the value of the input fields
             var imageContent = imageCreate.value;
             var textContent = userText.value;
             var userNameContent = userName.value;
+           // console.log(textOutput);
 
 
             if(imageContent) {
-
                 //store the data
                 dataStorage.push({img : imageContent, name : userNameContent, reason: textContent, date_submitted : Date()});
+                console.log("data", dataStorage);
+
+                //for (var column = 0; column <1; column++) {
+                var imageOutput = document.createElement("img");
+                imageOutput.src = imageContent;
+                //imageOutput.className = "border";
             
                 var dateSubmitted = new Date();
 
-                var deletePost = document.createElement("button");
-                deletePost.onclick = function() {
-    //need function to delete item by id from the array
-                };
-                deletePost.innerHTML = "Delete";
-                deletePost.className = "bottom btn btn-sm btn-danger";
-                document.getElementById("imageOutput").appendChild(deletePost);
-
                 var nameOutput = document.createElement("p");
-
-                nameOutput.innerHTML = ("Submitted by: " + "<b>"+userNameContent+"</b>"+" on " + m +" " + dateSubmitted.getDate() +", " + dateSubmitted.getFullYear());
-                document.getElementById("imageOutput").appendChild(nameOutput);
-               // nameOutput.className = "flex-item text-center border";
+                nameOutput.innerHTML = userNameContent;
 
                 var textOutput = document.createElement("p");
-                textOutput.innerHTML = ("This makes me happy because " + textContent);
-                document.getElementById("imageOutput").append(textOutput);
-               // textOutput.className = "flex-item border text-center";
+                textOutput.innerHTML = textContent;
 
-                var imageOutput = document.createElement("img");
-                imageOutput.src = imageContent;
-                document.getElementById("imageOutput").appendChild(imageOutput);
-               // imageOutput.className = "flex-item";
-            
+                //create forEach to push to display function
+                var postSmiles = [];
+                dataStorage.forEach(function(item) {
+                    //console.log("display function", item.name, item.img);
+                    postSmiles.push(item);
+                    displaySmiles.innerHTML = ("postSmiles", postSmiles);
+                    socialFeed.append(displaySmiles);
+                   // outputImage.append(imageOutput);
+                    //outputText.append(nameOutput, n," ",dateSubmitted.getDate(),", ",dateSubmitted.getFullYear());
+                });
+                console.log("postsmiles", postSmiles);  //
 
-                console.log(dataStorage);
+                //create function to display items
+              //  function displaySmiles(item) {
+                    
 
-
+             //       outputImage.append(item.img);
+             //       outputText.append(item.name);
+                    //outputImage.append(imageOutput);
+                    //outputText.append(textOutput);
+                    //outputName.append(nameOutput, n," ",dateSubmitted.getDate(),", ",dateSubmitted.getFullYear());
+              //  }
                 //reset image input 
                 imageCreate.value = "";
                 userText.value = "";
                 userName.value = "";
 
-            } else {
+            //} 
+            //dataStorage[row] = [];
+           // }
+            }else {
                 alert("no image!");
             }
+           // console.log("smiles", displaySmiles);
+    }
+ 
 
-    }  
+ //   const apps = ['WhatsApp', 'Instagram', 'Facebook'];
+  //  const playStore = [];
 
+//apps.forEach(function(item){
+ // playStore.push(item)
+////});
+
+//console.log(playStore);
+        
     </script>
 </html>
