@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
-    function renderMovies(movieData) {
-        var movieHTML = movieData.map(function (currentMovie) {
+    function renderMovies(movies) {
+        var movieHTML = movies.map(function (currentMovie) {
             return `
                 <div class="card" style="width: 18rem;">
                     <img src= "${currentMovie.Poster}" class="card-img-top" alt="...">
@@ -12,14 +12,21 @@ window.addEventListener("DOMContentLoaded", function () {
                 </div>
         `
     }).join('');
-
-        document.getElementsByClassName("movies-container")[0].innerHTML = movieHTML;
+    return movieHTML;  
     }
 
         document.getElementById('search-form').addEventListener('submit', function(e){
             e.preventDefault();
-        
-        document.getElementById('search-form').onsubmit = renderMovies(movieData);
+            var searchString = document.getElementsByClassName('search-bar')[0].value; 
+        //console.log(searchString); 
+            var urlEncodedSearchString = encodeURIComponent(searchString);
+        axios.get("http://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString).then(function(response){
+            console.log(response.data.Search);
+        document.getElementsByClassName("movies-container")[0].innerHTML = renderMovies(response.data.Search);
+        movieData = response.data.Search;
+        });
+
+
     })
 
 });
